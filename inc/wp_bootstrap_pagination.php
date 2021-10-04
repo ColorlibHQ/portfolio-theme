@@ -13,20 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  */
 
-function portfolio_pagination( $args = array() ) {
+function startup_pagination( $args = array() ) {
     
     $defaults = array(
         'range'           => 4,
         'custom_query'    => FALSE,
-        'previous_string' => esc_html__( '&laquo;', 'portfolio' ),
-        'next_string'     => esc_html__( '&raquo;', 'portfolio' ),
-        'before_output'   => '<div class="portfolio-pagination-area col-12"><nav><ul class="pagination">',
+        'previous_string' => esc_html__( '&laquo;', 'startup' ),
+        'next_string'     => esc_html__( '&raquo;', 'startup' ),
+        'before_output'   => '<div class="startup-pagination-area col-12"><nav><ul class="pagination">',
         'after_output'    => '</ul></nav></div>'
     );
     
     $args = wp_parse_args( 
         $args, 
-        apply_filters( 'portfolio_pagination_defaults', $defaults )
+        apply_filters( 'startup_pagination_defaults', $defaults )
     );
     
     $args['range'] = (int) $args['range'] - 1;

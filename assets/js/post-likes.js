@@ -3,7 +3,7 @@
 	$(document).on('click', '.sl-button', function () {
 		var button = $(this);
 		var post_id = button.attr('data-post-id');
-		var portfolio = button.attr('data-nonce');
+		var startup = button.attr('data-nonce');
 		var iscomment = button.attr('data-iscomment');
 		var allbuttons;
 		if (iscomment === '1') { /* Comments can have same id */
@@ -17,9 +17,9 @@
 				type: 'POST',
 				url: simpleLikes.ajaxurl,
 				data: {
-					action: 'portfolio_process_simple_like',
+					action: 'startup_process_simple_like',
 					post_id: post_id,
-					nonce: portfolio,
+					nonce: startup,
 					is_comment: iscomment,
 				},
 				beforeSend: function () {

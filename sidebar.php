@@ -12,10 +12,10 @@ if( !defined( 'ABSPATH' ) ){
  */
 
 // Sidebar
-if( is_active_sidebar( 'portfolio-post-sidebar' ) ){
+if( is_active_sidebar( 'startup-post-sidebar' ) ){
 	
 	echo '<div class="col-lg-4 sidebar-widgets"><div class="blog_right_sidebar">';
-		dynamic_sidebar( 'portfolio-post-sidebar' );
+		dynamic_sidebar( 'startup-post-sidebar' );
 	echo '</div></div>';
 }
  

@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package portfolio
+ * @package startup
  */
 
 get_header();
 $count = 0;
 if( have_posts() ) {
     while( have_posts() ) : the_post();
-    $project_url = ! empty( portfolio_meta( 'project_url') ) ? portfolio_meta( 'project_url') : '';
-    $project_img = get_the_post_thumbnail( get_the_ID(), 'portfolio_portfolio_single_img_950x575', '', array( 'alt' => get_the_title() ) );
+    $project_url = ! empty( startup_meta( 'project_url') ) ? startup_meta( 'project_url') : '';
+    $project_img = get_the_post_thumbnail( get_the_ID(), 'startup_startup_single_img_950x575', '', array( 'alt' => get_the_title() ) );
     ?>
 
     <div class="projects_details_area">

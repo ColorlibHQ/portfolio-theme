@@ -1,6 +1,6 @@
 <?php 
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -18,13 +18,13 @@
          * @Footer
          * @Back To Top Button
          *
-         * @Hook portfolio_footer
+         * @Hook startup_footer
          *
-         * @Hooked  portfolio_footer_area 
+         * @Hooked  startup_footer_area 
          *
          */
 
-		do_action( 'portfolio_footer' );
+		do_action( 'startup_footer' );
 
 	wp_footer(); 
  ?>

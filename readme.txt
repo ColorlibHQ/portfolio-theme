@@ -1,16 +1,16 @@
-=== Portfolio ===
+=== Startup ===
 Contributors:		colorlib
 Tags:               custom-header, custom-menu, featured-image-header, featured-images, full-width-template, translation-ready
 Requires at least:	5.2
 Tested up to:		5.6
 
 == Description ==
-Portfolio is a clean, simple, responsive and customizable WordPress theme that looks awesome on any device. For a quick launch of a page to showcases your works, your talents and your services, apredefined theme is a wise decision to make. Portfolio has it all in store for you to easily and effortlessly engineer an appealing page to attract new clients and seal new business deals.
+Startup is a clean, simple, responsive and customizable WordPress theme that looks awesome on any device. For a quick launch of a page to showcases your works, your talents and your services, apredefined theme is a wise decision to make. Startup has it all in store for you to easily and effortlessly engineer an appealing page to attract new clients and seal new business deals.
 
 
 = License =
-Portfolio WordPress theme, Copyright (C) 2018 Colorlib.com
-Portfolio WordPress theme is licensed under the GPL2.
+Startup WordPress theme, Copyright (C) 2018 Colorlib.com
+Startup WordPress theme is licensed under the GPL2.
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
 The exceptions to this license are as follows:

@@ -13,8 +13,8 @@ if( !defined( 'ABSPATH' ) ){
 
 
 	//Pagination
-	if ( function_exists('portfolio_blog_pagination') ){
-		portfolio_blog_pagination();
+	if ( function_exists('startup_blog_pagination') ){
+		startup_blog_pagination();
 	}
 	
 ?>

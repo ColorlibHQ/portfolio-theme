@@ -20,24 +20,24 @@
 	 * Hook for Blog, single, page, search, archive pages
 	 * wrapper start with wrapper div, container, row.
 	 *
-	 * Hook portfolio_wrp_start
+	 * Hook startup_wrp_start
 	 *
-	 * @Hooked portfolio_wrp_start_cb
+	 * @Hooked startup_wrp_start_cb
 	 *  
 	 */
-	do_action( 'portfolio_wrp_start' );
+	do_action( 'startup_wrp_start' );
 	
 	/**
 	 * 
 	 * Hook for Blog, single, search, archive pages
 	 * column start.
 	 *
-	 * Hook portfolio_blog_col_start
+	 * Hook startup_blog_col_start
 	 *
-	 * @Hooked portfolio_blog_col_start_cb
+	 * @Hooked startup_blog_col_start_cb
 	 *  
 	 */
-	do_action( 'portfolio_blog_col_start' );
+	do_action( 'startup_blog_col_start' );
 
 
 	if( have_posts() ){
@@ -61,33 +61,33 @@
 	 * Hook for Blog, single, search, archive pages
 	 * column end.
 	 *
-	 * Hook portfolio_blog_col_end
+	 * Hook startup_blog_col_end
 	 *
-	 * @Hooked portfolio_blog_col_end_cb
+	 * @Hooked startup_blog_col_end_cb
 	 *  
 	 */
-	do_action( 'portfolio_blog_col_end' );
+	do_action( 'startup_blog_col_end' );
 	
 	/**
 	 * 
 	 * Hook for Blog, single blog, search, archive pages sidebar.
 	 *
-	 * Hook portfolio_blog_sidebar
+	 * Hook startup_blog_sidebar
 	 *
-	 * @Hooked portfolio_blog_sidebar_cb
+	 * @Hooked startup_blog_sidebar_cb
 	 *  
 	 */
-	do_action( 'portfolio_blog_sidebar' );
+	do_action( 'startup_blog_sidebar' );
  	
  	/**
 	 * Hook for Blog, single, page, search, archive pages
 	 * wrapper end with wrapper div, container, row.
  	 *
- 	 * Hook portfolio_wrp_end
- 	 * @Hooked  portfolio_wrp_end_cb
+ 	 * Hook startup_wrp_end
+ 	 * @Hooked  startup_wrp_end_cb
  	 *
  	 */
- 	do_action( 'portfolio_wrp_end' );
+ 	do_action( 'startup_wrp_end' );
  	
 	 // Call Footer
 	 get_footer();

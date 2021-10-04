@@ -1,8 +1,8 @@
 <?php
 /**
- * Portfolio Theme Framework
+ * Startup Theme Framework
  *
- * @package Portfolio
+ * @package Startup
  * @since   1.0
  */
 
@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Class Portfolio
+ * Class Startup
  */
 class Epsilon_init_Dashboard {
 	/**
@@ -20,7 +20,7 @@ class Epsilon_init_Dashboard {
 	public $top_bar = false;
 
 	/**
-	 * Portfolio portfolior.
+	 * Startup startupr.
 	 *
 	 * Theme specific actions and filters
 	 *
@@ -70,11 +70,11 @@ class Epsilon_init_Dashboard {
 	}
 
 	/**
-	 * Portfolio instance
+	 * Startup instance
 	 *
 	 * @param array $theme
 	 *
-	 * @return Portfolio
+	 * @return Startup
 	 */
 	public static function get_instance( $theme = array() ) {
 		static $inst;
@@ -140,10 +140,10 @@ class Epsilon_init_Dashboard {
 		$html .=
 			vsprintf(
 			// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'portfolio' ),
+				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'startup' ),
 				array(
-					'Portfolio',
-					'<a target="_blank" href="https://bit.ly/feedback-portfolio">',
+					'Startup',
+					'<a target="_blank" href="https://bit.ly/feedback-startup">',
 					'</a>',
 				)
 			);
@@ -151,7 +151,7 @@ class Epsilon_init_Dashboard {
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice(
 			array(
-				'id'      => 'portfolio_notification_feedback',
+				'id'      => 'startup_notification_feedback',
 				'type'    => 'notice epsilon-big',
 				'message' => $html,
 			)
@@ -169,7 +169,7 @@ class Epsilon_init_Dashboard {
 	 *
 	 */
 	public function init_nav_menus() {
-		new Epsilon_Section_Navigation_Menu( 'portfolio_frontpage_sections_' );
+		new Epsilon_Section_Navigation_Menu( 'startup_frontpage_sections_' );
 	}
 
 	/**

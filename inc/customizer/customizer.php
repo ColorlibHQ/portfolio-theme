@@ -1,36 +1,36 @@
 <?php 
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
  *
  */
 
-class portfolio_theme_customizer {
+class startup_theme_customizer {
 
 
     function __construct(){
-        add_action( 'customize_register', array( $this, 'portfolio_theme_customizer_options' ) );
-        add_action( 'customize_controls_enqueue_scripts', array( $this, 'portfolio_customizer_js' ) );
+        add_action( 'customize_register', array( $this, 'startup_theme_customizer_options' ) );
+        add_action( 'customize_controls_enqueue_scripts', array( $this, 'startup_customizer_js' ) );
     }
 
     // Customize register hook
 
-    public function portfolio_theme_customizer_options( $wp_customize ){
+    public function startup_theme_customizer_options( $wp_customize ){
         
         // Include files
-        include( PORTFOLIO_DIR_PATH_INC. 'customizer/fields/sections.php' );
-        include( PORTFOLIO_DIR_PATH_INC. 'customizer/fields/fields.php' );
+        include( STARTUP_DIR_PATH_INC. 'customizer/fields/sections.php' );
+        include( STARTUP_DIR_PATH_INC. 'customizer/fields/fields.php' );
 
         // Change panel to theme option
-        $wp_customize->get_section( 'title_tagline' )->panel      = 'portfolio_theme_options_panel';
+        $wp_customize->get_section( 'title_tagline' )->panel      = 'startup_theme_options_panel';
         // change priorities
         $wp_customize->get_section( 'title_tagline' )->priority     = 0;
         $wp_customize->remove_section( 'colors' );
 
         // Copyright text selective refresh
-        $wp_customize->selective_refresh->add_partial( 'portfolio-copyright-text-settings', 
+        $wp_customize->selective_refresh->add_partial( 'startup-copyright-text-settings', 
         array( 'selector' => '.copyright-text' ) );
 
 
@@ -39,11 +39,11 @@ class portfolio_theme_customizer {
 
     // Customizer js enqueue
 
-    public function portfolio_customizer_js(){
+    public function startup_customizer_js(){
 
-        wp_enqueue_script( 'portfolio-customizer', PORTFOLIO_DIR_URI.'inc/customizer/js/customizer.js', array('customize-controls'), '1.0', true );
+        wp_enqueue_script( 'startup-customizer', STARTUP_DIR_URI.'inc/customizer/js/customizer.js', array('customize-controls'), '1.0', true );
 
-        wp_localize_script( 'portfolio-customizer', 'customizerdata', array(
+        wp_localize_script( 'startup-customizer', 'customizerdata', array(
             'site_url'      => site_url('/'),
             'blog_page'     => get_post_type_archive_link( 'post' ),
 
@@ -52,7 +52,7 @@ class portfolio_theme_customizer {
     }
 
     // Get page name by page template
-    public static function portfolio_get_page_name( $template ){
+    public static function startup_get_page_name( $template ){
 
         $pages = get_pages(array(
             'meta_key' => '_wp_page_template',
@@ -64,7 +64,7 @@ class portfolio_theme_customizer {
 
     // Image sanitization callback.
 
-    public static function portfolio_sanitize_image( $image, $setting ) {
+    public static function startup_sanitize_image( $image, $setting ) {
 
         /*
          * Array of valid image file types.
