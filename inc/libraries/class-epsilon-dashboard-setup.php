@@ -1,8 +1,8 @@
 <?php
 /**
- * Portfolio Dashboard
+ * Startup Dashboard
  *
- * @package Portfolio
+ * @package Startup
  * @since   1.0
  */
 
@@ -25,7 +25,7 @@ class Epsilon_Dashboard_Setup {
 	private $notice = '';
 
 	/**
-	 * Epsilon_Dashboard_Setup portfolior.
+	 * Epsilon_Dashboard_Setup startupr.
 	 *
 	 * @param array $theme
 	 */
@@ -86,18 +86,18 @@ class Epsilon_Dashboard_Setup {
 
 
 			/* Translators: Notice Title */
-			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'portfolio' ), $this->theme['theme-name'] ) . '</h1>';
+			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'startup' ), $this->theme['theme-name'] ) . '</h1>';
 			$this->notice .= '<p>';
 			$this->notice .=
 				sprintf( /* Translators: Notice */
-					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'portfolio' ),
+					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'startup' ),
 					'<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme['theme-slug'] . '-dashboard' ) ) . '">',
 					'</a>',
 					$this->theme['theme-name']
 				);
 			$this->notice .= '</p>';
 			/* Translators: Notice URL */
-			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'portfolio' ), $this->theme['theme-name'] ) . '</a></p>';
+			$this->notice .= '<p><a href="' . esc_url( admin_url( '?page=epsilon-onboarding' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'startup' ), $this->theme['theme-name'] ) . '</a></p>';
 		}
 		$notifications = Epsilon_Notifications::get_instance();
 		$notifications->add_notice(
@@ -142,50 +142,50 @@ class Epsilon_Dashboard_Setup {
 		return array(
 			array(
 				'id'       => 'landing',
-				'title'    => __( 'Welcome to Portfolio', 'portfolio' ),
+				'title'    => __( 'Welcome to Startup', 'startup' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( ' This wizard will set up your theme, install plugins and import demo content. It is optional & should take less than a minute.', 'portfolio' ),
+						__( ' This wizard will set up your theme, install plugins and import demo content. It is optional & should take less than a minute.', 'startup' ),
 					),
 				),
-				'progress' => __( 'Getting Started', 'portfolio' ),
+				'progress' => __( 'Getting Started', 'startup' ),
 				'buttons'  => array(
 					'next' => array(
 						'action' => 'next',
-						'label'  => __( 'Let\'s get started <span class="dashicons dashicons-arrow-right-alt2"></span>', 'portfolio' ),
+						'label'  => __( 'Let\'s get started <span class="dashicons dashicons-arrow-right-alt2"></span>', 'startup' ),
 					),
 				),
 			),
 			array(
 				'id'       => 'plugins',
-				'title'    => __( 'Install Recommended Plugins', 'portfolio' ),
+				'title'    => __( 'Install Recommended Plugins', 'startup' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Portfolio integrates tightly with a few plugins that we recommend installing to get the full theme experience, as we\'ve intended it to be. This is an optional step, but we recommend installing them as we think these hand-picked plugins work really nice with Portfolio and help enhance the overall experience.', 'portfolio' ),
+						__( 'Startup integrates tightly with a few plugins that we recommend installing to get the full theme experience, as we\'ve intended it to be. This is an optional step, but we recommend installing them as we think these hand-picked plugins work really nice with Startup and help enhance the overall experience.', 'startup' ),
 					),
 				),
-				'progress' => __( 'Plugins', 'portfolio' ),
+				'progress' => __( 'Plugins', 'startup' ),
 				'buttons'  => array(
 					'next' => array(
 						'action' => 'next',
-						'label'  => __( 'Next <span class="dashicons dashicons-arrow-right-alt2"></span>', 'portfolio' ),
+						'label'  => __( 'Next <span class="dashicons dashicons-arrow-right-alt2"></span>', 'startup' ),
 					),
 				),
 			),
 			array(
 				'id'       => 'enjoy',
-				'title'    => __( 'Almost ready', 'portfolio' ),
+				'title'    => __( 'Almost ready', 'startup' ),
 				'content'  => array(
 					'paragraphs' => array(
-						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.colorlib.com">Colorlib</a>.', 'portfolio' ),
+						__( 'Your new theme has been all set up. Enjoy your new theme by <a href="https://www.colorlib.com">Colorlib</a>.', 'startup' ),
 						$this->get_permission_content(),
 					),
 				),
-				'progress' => __( 'Finished', 'portfolio' ),
+				'progress' => __( 'Finished', 'startup' ),
 				'buttons'  => array(
 					'next' => array(
 						'action' => 'customizer',
-						'label'  => __( 'Allow & Finish', 'portfolio' ),
+						'label'  => __( 'Allow & Finish', 'startup' ),
 					),
 				),
 			),
@@ -199,28 +199,28 @@ class Epsilon_Dashboard_Setup {
 	 */
 	public function get_permission_content() {
 		$html = '<div class="permission-request">';
-		$html .= '<a href="#hidden-permissions" id="hidden-permissions-toggle"> ' . __( 'What permissions are being granted', 'portfolio' ) . ' <span class="dashicons dashicons-arrow-down"></span></a>';
+		$html .= '<a href="#hidden-permissions" id="hidden-permissions-toggle"> ' . __( 'What permissions are being granted', 'startup' ) . ' <span class="dashicons dashicons-arrow-down"></span></a>';
 		$html .= '<div id="hidden-permissions" >
 			<ul>
 				<li>
 					<span class="dashicons dashicons-admin-users"></span>
 					<span class="content">
-						<strong>' . __( 'YOUR PROFILE OVERVIEW', 'portfolio' ) . '</strong>
-						<small>' . __( 'Name and email address', 'portfolio' ) . '</small>		
+						<strong>' . __( 'YOUR PROFILE OVERVIEW', 'startup' ) . '</strong>
+						<small>' . __( 'Name and email address', 'startup' ) . '</small>		
 					</span>
 				</li>
 				<li>
 					<span class="dashicons dashicons-admin-settings"></span>
 					<span class="content">
-						<strong>' . __( 'YOUR SITE OVERVIEW', 'portfolio' ) . '</strong>
-						<small>' . __( 'Site URL, WP Version, PHP Version, plugins and themes', 'portfolio' ) . '</small>		
+						<strong>' . __( 'YOUR SITE OVERVIEW', 'startup' ) . '</strong>
+						<small>' . __( 'Site URL, WP Version, PHP Version, plugins and themes', 'startup' ) . '</small>		
 					</span>
 				</li>
 				<li>
 					<span class="dashicons dashicons-admin-plugins"></span>
 					<span class="content">
-						<strong>' . __( 'CURRENT PLUGIN EVENTS', 'portfolio' ) . '</strong>
-						<small>' . __( 'Activation, deactivation and uninstall', 'portfolio' ) . '</small>		
+						<strong>' . __( 'CURRENT PLUGIN EVENTS', 'startup' ) . '</strong>
+						<small>' . __( 'Activation, deactivation and uninstall', 'startup' ) . '</small>		
 					</span>
 				</li>
 			</ul>
@@ -241,7 +241,7 @@ class Epsilon_Dashboard_Setup {
 				'integration' => true,
 				'recommended' => false,
 			),
-			'portfolio-companion' => array(
+			'startup-companion' => array(
 				'integration' => true,
 				'recommended' => false,
 			),
@@ -266,7 +266,7 @@ class Epsilon_Dashboard_Setup {
 
 		if ( ! $integrated ) {
 			unset( $arr['contact-form-7'] );
-			unset( $arr['portfolio-companion'] );
+			unset( $arr['startup-companion'] );
 			unset( $arr['elementor'] );
 			unset( $arr['one-click-demo-import'] );
 		}
@@ -285,7 +285,7 @@ class Epsilon_Dashboard_Setup {
 		return array(
 
 			array(
-				'id'          => 'portfolio-check-cf7',
+				'id'          => 'startup-check-cf7',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
 				'plugin_slug' => 'contact-form-7',
@@ -293,29 +293,29 @@ class Epsilon_Dashboard_Setup {
 				'check'       => defined( 'WPCF7_VERSION' ),
 				'actions'     => array(
 					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ) ? __( 'Activate Plugin', 'portfolio' ) : __( 'Install Plugin', 'portfolio' ),
+						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ) ? __( 'Activate Plugin', 'startup' ) : __( 'Install Plugin', 'startup' ),
 						'type'    => 'handle-plugin',
 						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ),
 					),
 				),
 			),
 			array(
-				'id'          => 'portfolio-check-cm',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'title', 'Portfolio Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'description', 'Portfolio Companion' ),
-				'plugin_slug' => 'portfolio-companion',
+				'id'          => 'startup-check-cm',
+				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'title', 'Startup Companion' ),
+				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'description', 'Startup Companion' ),
+				'plugin_slug' => 'startup-companion',
 				'state'       => false,
-				'check'       => defined( 'PORTFOLIO_COMPANION_VERSION' ),
+				'check'       => defined( 'STARTUP_COMPANION_VERSION' ),
 				'actions'     => array(
 					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'installed', 'Portfolio Companion' ) ? __( 'Activate Plugin', 'portfolio' ) : __( 'Install Plugin', 'portfolio' ),
+						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'installed', 'Startup Companion' ) ? __( 'Activate Plugin', 'startup' ) : __( 'Install Plugin', 'startup' ),
 						'type'    => 'handle-plugin',
-						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'installed', 'Portfolio Companion' ),
+						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'installed', 'Startup Companion' ),
 					),
 				),
 			),
 			array(
-				'id'          => 'portfolio-check-elementor',
+				'id'          => 'startup-check-elementor',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'title', 'Elementor' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'description', 'Elementor' ),
 				'plugin_slug' => 'elementor',
@@ -323,14 +323,14 @@ class Epsilon_Dashboard_Setup {
 				'check'       => defined( 'ELEMENTOR_VERSION' ),
 				'actions'     => array(
 					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'installed', 'Elementor' ) ? __( 'Activate Plugin', 'portfolio' ) : __( 'Install Plugin', 'portfolio' ),
+						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'installed', 'Elementor' ) ? __( 'Activate Plugin', 'startup' ) : __( 'Install Plugin', 'startup' ),
 						'type'    => 'handle-plugin',
 						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'installed', 'Elementor' ),
 					),
 				),
 			),
 			array(
-				'id'          => 'portfolio-check-ocdi',
+				'id'          => 'startup-check-ocdi',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import', 'verify_ocdi' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import', 'verify_ocdi' ),
 				'plugin_slug' => 'one-click-demo-import',
@@ -338,7 +338,7 @@ class Epsilon_Dashboard_Setup {
 				'check'       => defined( 'PT_OCDI_VERSION' ),
 				'actions'     => array(
 					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import', 'verify_ocdi' ) ? __( 'Activate Plugin', 'portfolio' ) : __( 'Install Plugin', 'portfolio' ),
+						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import', 'verify_ocdi' ) ? __( 'Activate Plugin', 'startup' ) : __( 'Install Plugin', 'startup' ),
 						'type'    => 'handle-plugin',
 						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import', 'verify_ocdi' ),
 					),
@@ -354,28 +354,28 @@ class Epsilon_Dashboard_Setup {
 		return array(
 
 			array(
-				'id'          => 'portfolio-check-cf7',
+				'id'          => 'startup-check-cf7',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'title', 'Contact Form 7', 'verify_cf7' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
 				'plugin_slug' => 'contact-form-7',
 				'check'       => defined( 'WPCF7_VERSION' ),
 			),
 			array(
-				'id'          => 'portfolio-check-cm',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'title', 'Portfolio Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'portfolio-companion', 'description', 'Portfolio Companion' ),
-				'plugin_slug' => 'portfolio-companion',
-				'check'       => defined( 'PORTFOLIO_COMPANION_VERSION' ),
+				'id'          => 'startup-check-cm',
+				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'title', 'Startup Companion' ),
+				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'startup-companion', 'description', 'Startup Companion' ),
+				'plugin_slug' => 'startup-companion',
+				'check'       => defined( 'STARTUP_COMPANION_VERSION' ),
 			),
 			array(
-				'id'          => 'portfolio-check-elementor',
+				'id'          => 'startup-check-elementor',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'title', 'Elementor' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'description', 'Elementor' ),
 				'plugin_slug' => 'elementor',
 				'check'       => defined( 'ELEMENTOR_VERSION' ),
 			),
 			array(
-				'id'          => 'portfolio-check-ocdi',
+				'id'          => 'startup-check-ocdi',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import', 'verify_ocdi' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import', 'verify_ocdi' ),
 				'plugin_slug' => 'one-click-demo-import',
@@ -397,49 +397,49 @@ class Epsilon_Dashboard_Setup {
 		return array(
 			array(
 				'id'      => 'epsilon-getting-started',
-				'title'   => esc_html__( 'Getting Started', 'portfolio' ),
+				'title'   => esc_html__( 'Getting Started', 'startup' ),
 				'hidden'  => false,
 				'type'    => 'info',
 				'content' => array(
 					array(
-						'title'     => esc_html__( 'Step 1 - Implement recommended actions', 'portfolio' ),
-						'paragraph' => esc_html__( 'We compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'portfolio' ),
-						'action'    => '<a href="' . esc_url( admin_url() . '?page=epsilon-onboarding' ) . '" class="button button-primary">' . __( 'Launch wizard', 'portfolio' ) . '</a>',
+						'title'     => esc_html__( 'Step 1 - Implement recommended actions', 'startup' ),
+						'paragraph' => esc_html__( 'We compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'startup' ),
+						'action'    => '<a href="' . esc_url( admin_url() . '?page=epsilon-onboarding' ) . '" class="button button-primary">' . __( 'Launch wizard', 'startup' ) . '</a>',
 					),
 					array(
-						'title'     => esc_html__( 'Step 2 - Check our documentation', 'portfolio' ),
-						'paragraph' => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'portfolio' ),
-						'action'    => '<a target="_blank" href="https://colorlib.com/">' . __( 'Full documentation', 'portfolio' ) . '</a>',
+						'title'     => esc_html__( 'Step 2 - Check our documentation', 'startup' ),
+						'paragraph' => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'startup' ),
+						'action'    => '<a target="_blank" href="https://colorlib.com/">' . __( 'Full documentation', 'startup' ) . '</a>',
 					),
 					array(
-						'title'     => esc_html__( 'Step 3 - Customize everything', 'portfolio' ),
-						'paragraph' => esc_html__( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'portfolio' ),
-						'action'    => '<a target="_blank" href="' . esc_url( admin_url() . 'customize.php' ) . '" class="button button-primary">' . esc_html__( 'Go to Customizer', 'portfolio' ) . '</a>',
+						'title'     => esc_html__( 'Step 3 - Customize everything', 'startup' ),
+						'paragraph' => esc_html__( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'startup' ),
+						'action'    => '<a target="_blank" href="' . esc_url( admin_url() . 'customize.php' ) . '" class="button button-primary">' . esc_html__( 'Go to Customizer', 'startup' ) . '</a>',
 					),
 					array(
-						'title'     => esc_html__( 'Lend a hand and share your thoughts', 'portfolio' ),
+						'title'     => esc_html__( 'Lend a hand and share your thoughts', 'startup' ),
 						'paragraph' => vsprintf(
 						// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
-							__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'portfolio' ),
+							__( 'We worked hard on making %1$s the best one out there. We are interested in hearing your thoughts about %1$s and what we could do to make it even better.<br/> <br/>', 'startup' ),
 							array(
 								$theme->get( 'Name' ),
 							)
 						),
-						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/feedback-portfolio">Have your say</a><br/>',
+						'action'    => '<a class="button button-feedback" target="_blank" href="https://bit.ly/feedback-startup">Have your say</a><br/>',
 						'type'      => 'standout',
 					),
 				),
 			),
 			array(
 				'id'      => 'epsilon-actions',
-				'title'   => esc_html__( 'Actions', 'portfolio' ),
+				'title'   => esc_html__( 'Actions', 'startup' ),
 				'type'    => 'actions',
 				'hidden'  => $this->theme['theme-slug'] . '_recommended_actions',
 				'content' => $this->get_actions(),
 			),
 			array(
 				'id'     => 'epsilon-plugins',
-				'title'  => esc_html__( 'Recommended Plugins', 'portfolio' ),
+				'title'  => esc_html__( 'Recommended Plugins', 'startup' ),
 				'hidden' => $this->theme['theme-slug'] . '_recommended_plugins',
 				'type'   => 'plugins',
 			)

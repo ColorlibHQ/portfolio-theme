@@ -1,6 +1,6 @@
 <?php
 /**
- * @Packge       : Portfolio
+ * @Packge       : Startup
  * @Version      : 1.0
  * @Author       : Colorlib
  * @Author URI 	 : http://colorlib.com/wp/
@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Final Class
-final class Portfolio {
+final class Startup {
 
 	// Theme Version
-	private $portfolio_version = '1.0';
+	private $startup_version = '1.0';
 
 	// Minimum WordPress Version required
 	private $min_wp = '5.0';
@@ -59,9 +59,9 @@ final class Portfolio {
 	private function setup() {
 
 		// Create enqueue class instance
-		$enqueu          = new portfolio_Enqueue();
+		$enqueu          = new startup_Enqueue();
 		$enqueu->scripts = $this->enqueue();
-		$enqueu->portfolio_scripts_enqueue_init();
+		$enqueu->startup_scripts_enqueue_init();
 
 
 	}
@@ -69,14 +69,14 @@ final class Portfolio {
 	// Theme Support
 	public function support() {
 		// content width
-		$GLOBALS['content_width'] = apply_filters( 'portfolio_content_width', 751 );
+		$GLOBALS['content_width'] = apply_filters( 'startup_content_width', 751 );
 
 
 		// Remove new widget block.
 		remove_theme_support( 'widgets-block-editor' );
 
 		// text domain for translation.
-		load_theme_textdomain( 'portfolio', PORTFOLIO_DIR_PATH . '/languages' );
+		load_theme_textdomain( 'startup', STARTUP_DIR_PATH . '/languages' );
 
 		// support title tage
 		add_theme_support( 'title-tag' );
@@ -97,18 +97,14 @@ final class Portfolio {
 		add_theme_support( 'post-thumbnails', array( 'post', 'project' ) );
 
 		// Site logo size
-		add_image_size( 'portfolio_site_logo_83x39', 83, 39, true );
+		add_image_size( 'startup_site_logo_131x36', 131, 36, true );
 
-		// Project img thumb size
-		add_image_size( 'portfolio_project_img_681x484', 681, 484, true );
-		add_image_size( 'portfolio_project_img_558x484', 558, 484, true );
-
-		// home blog post image size
-		add_image_size( 'portfolio_home_blog_558x380', 558, 380, true );
+		// About img thumb size
+		add_image_size( 'startup_about_img_960x742', 960, 742, true );
 
 		// Single blog post image size
-		add_image_size( 'portfolio_single_blog_750x375', 750, 375, true );
-		add_image_size( 'portfolio_np_thumb', 60, 60, true );
+		add_image_size( 'startup_single_blog_750x375', 750, 375, true );
+		add_image_size( 'startup_np_thumb', 60, 60, true );
 
 		// support custom background
 		add_theme_support( 'custom-background', array(
@@ -135,10 +131,10 @@ final class Portfolio {
 
 		// register nav menu
 		register_nav_menus( array(
-			'primary-menu'	=> esc_html__( 'Primary Menu', 'portfolio' ),
-			'services'		=> esc_html__( 'Services', 'portfolio' ),
-			'useful-links'	=> esc_html__( 'Useful Links', 'portfolio' ),
-			'follow-us'		=> esc_html__( 'Follow Us', 'portfolio' ),
+			'primary-menu'	=> esc_html__( 'Primary Menu', 'startup' ),
+			'services'		=> esc_html__( 'Services', 'startup' ),
+			'useful-links'	=> esc_html__( 'Useful Links', 'startup' ),
+			'follow-us'		=> esc_html__( 'Follow Us', 'startup' ),
 		) );
 
 		// editor style
@@ -149,8 +145,8 @@ final class Portfolio {
 	// enqueue theme style and script
 	private function enqueue() {
 
-		$cssPath = PORTFOLIO_DIR_CSS_URI;
-		$jsPath  = PORTFOLIO_DIR_JS_URI;
+		$cssPath = STARTUP_DIR_CSS_URI;
+		$jsPath  = STARTUP_DIR_JS_URI;
 		
 		$scripts = array(
 			'style'   => array(
@@ -228,10 +224,10 @@ final class Portfolio {
 					'handler'    => 'main-style',
 					'file'       => $cssPath . 'style.css',
 					'dependency' => array(),
-					'version'    => $this->portfolio_version,
+					'version'    => $this->startup_version,
 				),
 				array(
-					'handler' => 'portfolio-style',
+					'handler' => 'startup-style',
 					'file'    => get_stylesheet_uri(),
 				),
 			),
@@ -359,7 +355,7 @@ final class Portfolio {
 					'handler'    => 'custom-js',
 					'file'       => $jsPath . 'main.js',
 					'dependency' => array( 'jquery' ),
-					'version'    => $this->portfolio_version,
+					'version'    => $this->startup_version,
 					'in_footer'  => true,
 				),
 
@@ -376,7 +372,7 @@ final class Portfolio {
 
 		$fontUrl = '';
 
-		if ( 'off' !== _x( 'on', 'Google font: on or off', 'portfolio' ) ) {
+		if ( 'off' !== _x( 'on', 'Google font: on or off', 'startup' ) ) {
 			
 			$font_families = array(
 				'Roboto:300,300i,400,500,500i,700,900',
@@ -410,8 +406,8 @@ final class Portfolio {
 		$Epsilon_Framework = new Epsilon_Framework();
 
 		
-		// Instantiate portfolio theme customizer
-		$portfolio_theme_customizer = new portfolio_theme_customizer();
+		// Instantiate startup theme customizer
+		$startup_theme_customizer = new startup_theme_customizer();
 	}
 
 	public function epsilon_quickie(){
@@ -420,7 +416,7 @@ final class Portfolio {
 
 			'links' => array(
 				array(
-					'link_to'   => 'portfolio_options_panel',
+					'link_to'   => 'startup_options_panel',
 					'icon'      => 'dashicons dashicons-admin-tools',
 					'link_type' => 'panel',
 				),
@@ -466,13 +462,13 @@ final class Portfolio {
 	}
 	// Set flag for elementor ( hooked in after switch theme )
 	public function set_elementor_flag(){
-		update_option( 'portfolio_had_elementor', 'no' );
+		update_option( 'startup_had_elementor', 'no' );
 	}
 	// Elementor dsiable default style
 	public function elementor_desiable_default_style(){
 
 		$nonce = $_POST['nonce'];
-		if ( ! wp_verify_nonce( $nonce, 'portfolio-elementor-notice-nonce' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'startup-elementor-notice-nonce' ) ) {
 			return;
 		}
 		$reply = $_POST['reply'];
@@ -481,7 +477,7 @@ final class Portfolio {
 				update_option( 'elementor_disable_color_schemes', 'yes' );
 				update_option( 'elementor_disable_typography_schemes', 'yes' );
 			}
-			update_option( 'portfolio_had_elementor', 'yes' );
+			update_option( 'startup_had_elementor', 'yes' );
 		}
 		die();
 
@@ -493,22 +489,22 @@ final class Portfolio {
 		$disabled_typography_schemes = get_option( 'elementor_disable_typography_schemes' );
 
 		if ( $disabled_color_schemes === 'yes' && $disabled_typography_schemes === 'yes' ) {
-			wp_enqueue_style( 'portfolio-elementor-default-style',  PORTFOLIO_DIR_CSS_URI. 'elementor-default-element-style.css', array(), $this->portfolio_version );
+			wp_enqueue_style( 'startup-elementor-default-style',  STARTUP_DIR_CSS_URI. 'elementor-default-element-style.css', array(), $this->startup_version );
 		}
 	}
 	// Enqueue elementor notice scripts
 	public function enqueue_elementor_notice_script(){
 
-		$had_elementor = get_option( 'portfolio_had_elementor' );
+		$had_elementor = get_option( 'startup_had_elementor' );
 
 		if( $had_elementor == 'no' && self::check_elementor_preview_page() ){
-			wp_enqueue_script( 'portfolio-elementor-notice', PORTFOLIO_DIR_JS_URI.'portfolio-elementor-notice.js', array('jquery'), '1.0', true );
+			wp_enqueue_script( 'startup-elementor-notice', STARTUP_DIR_JS_URI.'startup-elementor-notice.js', array('jquery'), '1.0', true );
 			wp_localize_script(
-				'portfolio-elementor-notice',
-				'portfolioElementorNotice',
+				'startup-elementor-notice',
+				'startupElementorNotice',
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-					'nonce'   => wp_create_nonce( 'portfolio-elementor-notice-nonce' ),
+					'nonce'   => wp_create_nonce( 'startup-elementor-notice-nonce' ),
 				)
 			);
 		}
@@ -516,7 +512,7 @@ final class Portfolio {
 	}
 
 
-} // End Portfolio Class
+} // End Startup Class
 
 
 ?>

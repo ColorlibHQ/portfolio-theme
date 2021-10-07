@@ -3,7 +3,7 @@
 /**
  * Epsilon Dashboard  Autoloader
  *
- * @package Portfolio
+ * @package Startup
  * @since   1.1.0
  */
 
@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Epsilon_Dashboard_Autoloader {
 	/**
-	 * Epsilon_dashboard_Autoloader portfolior.
+	 * Epsilon_dashboard_Autoloader startupr.
 	 */
 	public function __construct() {
 
@@ -31,7 +31,7 @@ class Epsilon_Dashboard_Autoloader {
 	public function load( $class = '' ) {
 
 		/**
-		 * All classes are prefixed with Portfolio_
+		 * All classes are prefixed with Startup_
 		 */
 		$parts = explode( '_', $class );
 		$bind  = implode( '-', $parts );
@@ -40,15 +40,15 @@ class Epsilon_Dashboard_Autoloader {
 		 * We provide working directories
 		 */
 		$directories = array(
-			PORTFOLIO_DIR_PATH_LIBS ,
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-framework/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/helpers/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/demo-generators/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/epsilon-tracking/',
-			PORTFOLIO_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/epsilon-tracking/trackers/',
+			STARTUP_DIR_PATH_LIBS ,
+			STARTUP_DIR_PATH_LIBS . 'epsilon-framework/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/helpers/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/demo-generators/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/epsilon-tracking/',
+			STARTUP_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/misc/epsilon-tracking/trackers/',
 		);
 
 		/**

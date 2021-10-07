@@ -18,20 +18,20 @@
     /**
      * Preloader Start
      *
-     * @Hook portfolio_preloader
+     * @Hook startup_preloader
      *
-     * @Hooked portfolio_site_preloader 10
+     * @Hooked startup_site_preloader 10
      *
      */
-    do_action( 'portfolio_preloader' );
+    do_action( 'startup_preloader' );
 
     /**
      * Header Area Start
      * Header menu
      * 
-     * @Hook portfolio_header
+     * @Hook startup_header
      *
-     * @Hooked portfolio_header_cb 10
+     * @Hooked startup_header_cb 10
      */
 
-	do_action( 'portfolio_header' );
+	do_action( 'startup_header' );

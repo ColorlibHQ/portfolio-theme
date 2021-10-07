@@ -4,7 +4,7 @@ if( !defined( 'ABSPATH' ) ){
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -21,13 +21,13 @@ if( !defined( 'ABSPATH' ) ){
 		/**
 		 * page content 
 		 * Comments Template
-		 * @Hook  portfolio_page_content
+		 * @Hook  startup_page_content
 		 *
-		 * @Hooked portfolio_page_content_cb
+		 * @Hooked startup_page_content_cb
 		 * 
 		 *
 		 */
-		do_action( 'portfolio_page_content' );
+		do_action( 'startup_page_content' );
 
 		?>
 	</div>

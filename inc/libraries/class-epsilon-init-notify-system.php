@@ -52,15 +52,15 @@ class Epsilon_Init_Notify_System extends Epsilon_Notify_System {
 		}
 
 		// Translators: %s is the plugin name.
-		$arr['title'] = sprintf( __( 'Install: %s', 'portfolio' ), $plugin_name );
+		$arr['title'] = sprintf( __( 'Install: %s', 'startup' ), $plugin_name );
 		// Translators: %s is the plugin name.
-		$arr['description'] = sprintf( __( 'Please install %s in order to create the demo content.', 'portfolio' ), $plugin_name );
+		$arr['description'] = sprintf( __( 'Please install %s in order to create the demo content.', 'startup' ), $plugin_name );
 
 		if ( $arr['installed'] ) {
 			// Translators: %s is the plugin name
-			$arr['title'] = sprintf( __( 'Activate: %s', 'portfolio' ), $plugin_name );
+			$arr['title'] = sprintf( __( 'Activate: %s', 'startup' ), $plugin_name );
 			// Translators: %s is the plugin name
-			$arr['description'] = sprintf( __( 'Please activate %s in order to create the demo content.', 'portfolio' ), $plugin_name );
+			$arr['description'] = sprintf( __( 'Please activate %s in order to create the demo content.', 'startup' ), $plugin_name );
 		}
 
 		return $arr[ $get ];

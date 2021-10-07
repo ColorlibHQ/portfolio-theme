@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 // image default alt
-if ( ! function_exists( 'portfolio_img_default_alt' ) ) {
-	function portfolio_img_default_alt( $url = '' ) {
+if ( ! function_exists( 'startup_img_default_alt' ) ) {
+	function startup_img_default_alt( $url = '' ) {
 
 		if ( $url != '' ) {
 			// attachment id by URL 
@@ -37,8 +37,8 @@ if ( ! function_exists( 'portfolio_img_default_alt' ) ) {
 
 
 // Image Tag
-if ( ! function_exists( 'portfolio_img_tag' ) ) {
-	function portfolio_img_tag( array $args ) {
+if ( ! function_exists( 'startup_img_tag' ) ) {
+	function startup_img_tag( array $args ) {
 
 
 		$default = array(
@@ -60,7 +60,7 @@ if ( ! function_exists( 'portfolio_img_tag' ) ) {
 		if ( ! empty( $args['alt'] ) ) {
 			$alt = $args['alt'];
 		} else {
-			$alt = portfolio_img_default_alt( $url );
+			$alt = startup_img_default_alt( $url );
 		}
 
 		/**
@@ -95,8 +95,8 @@ if ( ! function_exists( 'portfolio_img_tag' ) ) {
 }
 
 // Anchor Tag
-if ( ! function_exists( 'portfolio_anchor_tag' ) ) {
-	function portfolio_anchor_tag( array $args ) {
+if ( ! function_exists( 'startup_anchor_tag' ) ) {
+	function startup_anchor_tag( array $args ) {
 
 		$default = array(
 			'url'         => '',
@@ -159,8 +159,8 @@ if ( ! function_exists( 'portfolio_anchor_tag' ) ) {
 }
 
 // Heading Tag
-if ( ! function_exists( 'portfolio_heading_tag' ) ) {
-	function portfolio_heading_tag( array $args ) {
+if ( ! function_exists( 'startup_heading_tag' ) ) {
+	function startup_heading_tag( array $args ) {
 
 		$default = array(
 			'tag'         => 'h1',
@@ -209,8 +209,8 @@ if ( ! function_exists( 'portfolio_heading_tag' ) ) {
 }
 
 // Paragraph Tag
-if ( ! function_exists( 'portfolio_paragraph_tag' ) ) {
-	function portfolio_paragraph_tag( array $args ) {
+if ( ! function_exists( 'startup_paragraph_tag' ) ) {
+	function startup_paragraph_tag( array $args ) {
 
 		$default = array(
 			'text'        => 'Write Something',
@@ -255,8 +255,8 @@ if ( ! function_exists( 'portfolio_paragraph_tag' ) ) {
 }
 
 // Other Tag
-if ( ! function_exists( 'portfolio_other_tag' ) ) {
-	function portfolio_other_tag( array $args ) {
+if ( ! function_exists( 'startup_other_tag' ) ) {
+	function startup_other_tag( array $args ) {
 
 		$default = array(
 			'tag'         => 'span',
@@ -304,8 +304,8 @@ if ( ! function_exists( 'portfolio_other_tag' ) ) {
 }
 
 // Button Element 
-if ( ! function_exists( 'portfolio_button_element ' ) ) {
-	function portfolio_button_element( array $args ) {
+if ( ! function_exists( 'startup_button_element ' ) ) {
+	function startup_button_element( array $args ) {
 
 		$default = array(
 			'text'        => 'Button',

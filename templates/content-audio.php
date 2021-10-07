@@ -4,7 +4,7 @@ if( !defined( 'ABSPATH' ) ){
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -20,43 +20,43 @@ if( !defined( 'ABSPATH' ) ){
 		<?php 
 		/**
 		 * Blog Post thumbnail
-		 * @Hook  portfolio_blog_posts_thumb
+		 * @Hook  startup_blog_posts_thumb
 		 *
-		 * @Hooked portfolio_blog_posts_thumb_cb
+		 * @Hooked startup_blog_posts_thumb_cb
 		 * 
 		 *
 		 */
-		do_action( 'portfolio_blog_posts_thumb' );
+		do_action( 'startup_blog_posts_thumb' );
 		
 		/**
 		 * Blog Post Meta
-		 * @Hook  portfolio_blog_posts_meta
+		 * @Hook  startup_blog_posts_meta
 		 *
-		 * @Hooked portfolio_blog_posts_meta_cb
+		 * @Hooked startup_blog_posts_meta_cb
 		 * 
 		 *
 		 */
-		do_action( 'portfolio_blog_posts_meta' );
+		do_action( 'startup_blog_posts_meta' );
 
 		/**
 		 * Blog Post title
-		 * @Hook  portfolio_blog_posts_title
+		 * @Hook  startup_blog_posts_title
 		 *
-		 * @Hooked portfolio_blog_posts_title_cb
+		 * @Hooked startup_blog_posts_title_cb
 		 * 
 		 *
 		 */
-		do_action( 'portfolio_blog_posts_title' );		
+		do_action( 'startup_blog_posts_title' );		
 		
 		/**
 		 * Blog Excerpt With read more button
-		 * @Hook  portfolio_blog_posts_excerpt
+		 * @Hook  startup_blog_posts_excerpt
 		 *
-		 * @Hooked portfolio_blog_posts_excerpt_cb
+		 * @Hooked startup_blog_posts_excerpt_cb
 		 * 
 		 *
 		 */
-		do_action( 'portfolio_blog_posts_excerpt' );
+		do_action( 'startup_blog_posts_excerpt' );
 		
 		?>
 	</div>

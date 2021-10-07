@@ -12,10 +12,10 @@ if( !defined( 'ABSPATH' ) ){
  */
 
 // Sidebar
-if( is_active_sidebar( 'portfolio-page-sidebar' ) ){
+if( is_active_sidebar( 'startup-page-sidebar' ) ){
 	
 	echo '<aside class="page--sidebar col-md-3">';
-		dynamic_sidebar( 'portfolio-page-sidebar' );
+		dynamic_sidebar( 'startup-page-sidebar' );
 	echo '</aside>';
 }
  

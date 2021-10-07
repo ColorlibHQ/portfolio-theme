@@ -4,7 +4,7 @@ if( !defined( 'ABSPATH' ) ){
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -12,22 +12,22 @@ if( !defined( 'ABSPATH' ) ){
  */
 ?>
 <div class="col-sm-12 text-center">
-	<h1 class="blog-item-title p-b-30"><?php esc_html_e( 'Nothing Found', 'portfolio' ); ?></h1>
+	<h1 class="blog-item-title p-b-30"><?php esc_html_e( 'Nothing Found', 'startup' ); ?></h1>
 
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-	    <p><?php echo sprintf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'portfolio' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+	    <p><?php echo sprintf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'startup' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
 	<?php elseif ( is_search() ) : ?>
 		
-	    <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'portfolio' ); ?></p>
+	    <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'startup' ); ?></p>
 	    	<div class="row content-none-search">
 				<div class="col-sm-6 offset-sm-3 backtohome">
 					<?php 
-					$anchor = portfolio_anchor_tag(
+					$anchor = startup_anchor_tag(
 						array(
 							'url' 	 => esc_url( site_url( '/' ) ),
-							'text' 	 => esc_html__( 'Back to home page', 'portfolio' ),
+							'text' 	 => esc_html__( 'Back to home page', 'startup' ),
 							'class'  => 'button-contactForm btn_1 boxed-btn'
 						)
 					);
@@ -38,7 +38,7 @@ if( !defined( 'ABSPATH' ) ){
 
 	<?php else : ?>
 
-	    <p><?php wp_kses_post( _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'portfolio' ) ); ?></p>
+	    <p><?php wp_kses_post( _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'startup' ) ); ?></p>
 	    <?php get_search_form(); ?>
 
 	<?php endif; ?>

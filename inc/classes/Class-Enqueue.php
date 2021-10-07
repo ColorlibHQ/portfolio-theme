@@ -13,15 +13,15 @@
 	}
 
 	// Front-End script and style Enqueue class 
-	class portfolio_Enqueue{
+	class startup_Enqueue{
 
 		public $scripts = array();
 
-		public function portfolio_scripts_enqueue_init(){
-			add_action( 'wp_enqueue_scripts', array( $this, 'portfolio_frontend_enqueue_scripts', ) );
+		public function startup_scripts_enqueue_init(){
+			add_action( 'wp_enqueue_scripts', array( $this, 'startup_frontend_enqueue_scripts', ) );
 		}
 
-		public function portfolio_frontend_enqueue_scripts( ){
+		public function startup_frontend_enqueue_scripts( ){
 
 			$scripts = $this->scripts;
 			

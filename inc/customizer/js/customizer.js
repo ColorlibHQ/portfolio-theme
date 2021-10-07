@@ -1,7 +1,7 @@
 (function ($, api) {
 
     // Customizer fof page redirect
-    api.section('portfolio_fof_section', function (section) {
+    api.section('startup_fof_section', function (section) {
 
         section.expanded.bind(function (isExpanded) {
 
@@ -16,7 +16,7 @@
     });
 
     // Customizer blog page redirect
-    api.section('portfolio_blog_options_section', function (section) {
+    api.section('startup_blog_options_section', function (section) {
 
         section.expanded.bind(function (isExpanded) {
 
@@ -33,17 +33,17 @@
     });
 
     // General section
-    api.section('portfolio_general_options_section', function (section) {
+    api.section('startup_general_options_section', function (section) {
 
         section.expanded.bind(function (isExpanded) {
 
 
             // Preloader option show/hide
 
-            var $preloader = $('#portfolio-preloader-toggle-settings'),
-                $preloaderbg = $('#customize-control-portfolio_preloaderbgcolor'),
-                $preloaderbordercolor = $('#customize-control-portfolio_loaderbordcolor'),
-                $preloaderactivebordercolor = $('#customize-control-portfolio_loaderbordactivecolor');
+            var $preloader = $('#startup-preloader-toggle-settings'),
+                $preloaderbg = $('#customize-control-startup_preloaderbgcolor'),
+                $preloaderbordercolor = $('#customize-control-startup_loaderbordcolor'),
+                $preloaderactivebordercolor = $('#customize-control-startup_loaderbordactivecolor');
 
 
             // Default
@@ -83,18 +83,18 @@
     });
 
     // Footer section
-    api.section('portfolio_footer_options_section', function (section) {
+    api.section('startup_footer_options_section', function (section) {
 
         section.expanded.bind(function (isExpanded) {
 
 
             // Footer Widget option show/hide
-            var $widget_toggle = $('#portfolio-widget-toggle-settings'),
-                $widgetbg = $('#customize-control-portfolio_footer_bgColor_settings'),
-                $widgettext = $('#customize-control-portfolio_footer_wtcolor_settings'),
-                $widgettitle = $('#customize-control-portfolio_footer_widgettitlecolor_settings'),
-                $widgetanchor = $('#customize-control-portfolio_footer_wanchorcolor_settings'),
-                $widgetanchorhover = $('#customize-control-portfolio_footer_wanchorhovcolor_settings');
+            var $widget_toggle = $('#startup-widget-toggle-settings'),
+                $widgetbg = $('#customize-control-startup_footer_bgColor_settings'),
+                $widgettext = $('#customize-control-startup_footer_wtcolor_settings'),
+                $widgettitle = $('#customize-control-startup_footer_widgettitlecolor_settings'),
+                $widgetanchor = $('#customize-control-startup_footer_wanchorcolor_settings'),
+                $widgetanchorhover = $('#customize-control-startup_footer_wanchorhovcolor_settings');
 
 
             // Default
@@ -142,9 +142,9 @@
              *
              */
 
-            var $social_toggle = $('#portfolio-footersocial-toggle-settings'),
-                $socialcolor = $('#customize-control-portfolio_footer_socialiconcolor_settings'),
-                $socialhovercolor = $('#customize-control-portfolio_footer_socialiconhovercolor_settings');
+            var $social_toggle = $('#startup-footersocial-toggle-settings'),
+                $socialcolor = $('#customize-control-startup_footer_socialiconcolor_settings'),
+                $socialhovercolor = $('#customize-control-startup_footer_socialiconhovercolor_settings');
 
 
             // Default

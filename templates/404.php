@@ -4,7 +4,7 @@ if( !defined( 'ABSPATH' ) ){
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge 	   : Portfolio
+ * @Packge 	   : Startup
  * @Version    : 1.0
  * @Author 	   : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -20,29 +20,29 @@ if( !defined( 'ABSPATH' ) ){
 				<div class="f0f-content text-center col-md-12">
 					<div class="fof-content-before">
 						<?php 
-							$errorText = esc_html__( 'Ooops 404 Error !', 'portfolio' );
-							if( portfolio_opt( 'portfolio_fof_titleone' ) ){
-								$errorText = portfolio_opt( 'portfolio_fof_titleone' );
+							$errorText = esc_html__( 'Ooops 404 Error !', 'startup' );
+							if( startup_opt( 'startup_fof_titleone' ) ){
+								$errorText = startup_opt( 'startup_fof_titleone' );
 							}
 							
 							echo '<h1 class="h1">'.esc_html( $errorText ).'</h1>';
 
 							// Wrong text block
-							$wrongText = wp_kses_post( __( 'Either something went wrong or the page dosen&rsquo;t exist anymore.', 'portfolio' ) );
+							$wrongText = wp_kses_post( __( 'Either something went wrong or the page dosen&rsquo;t exist anymore.', 'startup' ) );
 
-							if( portfolio_opt('portfolio_fof_titletwo') ){
-								$wrongText = portfolio_opt('portfolio_fof_titletwo');
+							if( startup_opt('startup_fof_titletwo') ){
+								$wrongText = startup_opt('startup_fof_titletwo');
 							}
 
-							$anchor = portfolio_anchor_tag(
+							$anchor = startup_anchor_tag(
 								array(
 									'url' 	 => esc_url( site_url( '/' ) ),
-									'text' 	 => esc_html__( 'Go To Home page', 'portfolio' ),
+									'text' 	 => esc_html__( 'Go To Home page', 'startup' ),
 									'class'	 => 'button-contactForm btn_1 boxed-btn'
 								)
 							);
 
-							echo portfolio_paragraph_tag(
+							echo startup_paragraph_tag(
 								array(
 									'text' 	 => esc_html( $wrongText )
 								)

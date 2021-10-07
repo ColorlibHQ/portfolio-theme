@@ -1,6 +1,6 @@
 <?php
 /**
- * @Packge     : Portfolio
+ * @Packge     : Startup
  * @Version    : 1.0
  * @Author     : Colorlib
  * @Author     URI : http://colorlib.com/wp/
@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // Post Category
-function portfolio_post_cats() {
+function startup_post_cats() {
 
 	$cats       = get_the_category();
 	$categories = '';
 	if ( $cats ) {
 
 		$categories .= '<div class="posts--cat m--30-0-0">';
-		$categories .= '<ul class="nav"><li><span><i class="fa fm fa-th-list"></i>' . esc_html( 'Catagory :', 'portfolio' ) . '</span></li>';
+		$categories .= '<ul class="nav"><li><span><i class="fa fm fa-th-list"></i>' . esc_html( 'Catagory :', 'startup' ) . '</span></li>';
 
 		foreach ( $cats as $cat ) {
 			$categories .= '<li><a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" class="category-link">' . esc_html( $cat->name ) . '</a></li>';
@@ -36,7 +36,7 @@ function portfolio_post_cats() {
 }
 
 // Blog categories
-function portfolio_featured_post_cat(){
+function startup_featured_post_cat(){
 
 	$categories = get_the_category(); 
 	
@@ -58,7 +58,7 @@ function portfolio_featured_post_cat(){
 
 
 // Post Tags
-function portfolio_post_tags() {
+function startup_post_tags() {
 
 	$tags = get_the_tags();
 
@@ -78,8 +78,8 @@ function portfolio_post_tags() {
 
 
 // social media
-if ( ! function_exists( 'portfolio_social' ) ) {
-	function portfolio_social( $args = array() ) {
+if ( ! function_exists( 'startup_social' ) ) {
+	function startup_social( $args = array() ) {
 
 		$default = array(
 			'wrapper_start' => '',
@@ -90,7 +90,7 @@ if ( ! function_exists( 'portfolio_social' ) ) {
 		$args = wp_parse_args( $args, $default );
 
 
-		$url = portfolio_opt( 'portfolio_social_url' );
+		$url = startup_opt( 'startup_social_url' );
 		if ( is_array( $url ) && count( $url ) > 0 ):
 
 			echo wp_kses_post( $args['wrapper_start'] );
@@ -134,11 +134,11 @@ if ( ! function_exists( 'portfolio_social' ) ) {
 	}
 }
 // header cart count
-function portfolio_cart_count( $class = '' ) {
+function startup_cart_count( $class = '' ) {
 
 	?>
 	<div class="header-wrapicon2 <?php echo esc_attr( $class ); ?>">
-		<img src="<?php echo esc_url( PORTFOLIO_DIR_ASSETS_URI ); ?>img/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="<?php esc_attr_e( 'ICON', 'portfolio' ); ?>">
+		<img src="<?php echo esc_url( STARTUP_DIR_ASSETS_URI ); ?>img/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="<?php esc_attr_e( 'ICON', 'startup' ); ?>">
 		<span class="header-icons-noti"><?php echo sprintf( '%d', WC()->cart->cart_contents_count ); ?></span>
 		<div class="header-cart header-dropdown">
 			<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
@@ -149,7 +149,7 @@ function portfolio_cart_count( $class = '' ) {
 
 
 // Set contact form 7 default form template
-function portfolio_contact7_form_content( $template, $prop ) {
+function startup_contact7_form_content( $template, $prop ) {
     
     if ( 'form' == $prop ) {
 
@@ -162,4 +162,4 @@ function portfolio_contact7_form_content( $template, $prop ) {
     return $template;
     } 
 }
-add_filter( 'wpcf7_default_template', 'portfolio_contact7_form_content', 10, 2 );
+add_filter( 'wpcf7_default_template', 'startup_contact7_form_content', 10, 2 );

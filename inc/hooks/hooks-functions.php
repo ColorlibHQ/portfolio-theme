@@ -4,7 +4,7 @@ if( !defined( 'ABSPATH' ) ){
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge 	   : Portfolio
+ * @Packge 	   : Startup
  * @Version    : 1.0
  * @Author 	   : Colorlib
  * @Author URI : http://colorlib.com/wp/
@@ -12,12 +12,12 @@ if( !defined( 'ABSPATH' ) ){
  */
  
 	// Before wrapper Preloader
-	if( !function_exists('portfolio_site_preloader') ){
-		function portfolio_site_preloader(){
-			if( portfolio_opt('portfolio-preloader-toggle-settings') ):
+	if( !function_exists('startup_site_preloader') ){
+		function startup_site_preloader(){
+			if( startup_opt('startup-preloader-toggle-settings') ):
 			?>
 		    <div id="preloader">
-		        <div class="portfolio-preloader"></div>
+		        <div class="startup-preloader"></div>
 		    </div>
 			<?php
 			endif;
@@ -25,8 +25,8 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Header menu hook function
-	if( !function_exists( 'portfolio_header_cb' ) ){
-		function portfolio_header_cb(){
+	if( !function_exists( 'startup_header_cb' ) ){
+		function startup_header_cb(){
 			get_template_part( 'templates/header', 'top' );
 
 			if( !is_page_template( 'template-builder.php' ) && !is_singular('service') ){
@@ -36,12 +36,12 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Footer area hook function
-	if( !function_exists( 'portfolio_footer_area' ) ){
-		function portfolio_footer_area(){
-			$footer_class = portfolio_opt( 'portfolio_footer_widget_toggle' ) == 1 ? 'footer' : 'footer no-widget';
+	if( !function_exists( 'startup_footer_area' ) ){
+		function startup_footer_area(){
+			$footer_class = startup_opt( 'startup_footer_widget_toggle' ) == 1 ? 'footer' : 'footer no-widget';
 			echo '<footer class="'.esc_attr( $footer_class ).'">';
 				// Footer widgets
-				if ( portfolio_opt('portfolio_footer_widget_toggle') == 1) {
+				if ( startup_opt('startup_footer_widget_toggle') == 1) {
 					get_template_part( 'templates/footer', 'widgets' );
 				}
 				
@@ -53,27 +53,27 @@ if( !defined( 'ABSPATH' ) ){
 
 
 	// Blog, single, page, search, archive pages wrapper start hook function.
-	if( !function_exists('portfolio_wrp_start_cb') ){
-		function portfolio_wrp_start_cb(){
-			$portfolio_wrp_start_class = is_home() ? ' blog_area' : ' search-page';
-			echo '<section class="section-padding'.esc_attr($portfolio_wrp_start_class).'"><div class="container"><div class="row">';
+	if( !function_exists('startup_wrp_start_cb') ){
+		function startup_wrp_start_cb(){
+			$startup_wrp_start_class = is_home() ? ' blog_area' : ' search-page';
+			echo '<section class="section-padding'.esc_attr($startup_wrp_start_class).'"><div class="container"><div class="row">';
 		}
 	}
 	// Blog, single, page, search, archive pages wrapper end hook function.
-	if( !function_exists('portfolio_wrp_end_cb') ){
-		function portfolio_wrp_end_cb(){
+	if( !function_exists('startup_wrp_end_cb') ){
+		function startup_wrp_end_cb(){
 			echo '</div></div></section>';
 		}
 	}
 	// Blog, single, search, archive pages column start hook function.
-	if( !function_exists('portfolio_blog_col_start_cb') ){
-		function portfolio_blog_col_start_cb(){
+	if( !function_exists('startup_blog_col_start_cb') ){
+		function startup_blog_col_start_cb(){
 			
-			$sidebarOpt = portfolio_sidebar_opt();
+			$sidebarOpt = startup_sidebar_opt();
 								
 			//
 			if( !is_page() ){
-				$pullRight  = portfolio_pull_right( $sidebarOpt , '3' );
+				$pullRight  = startup_pull_right( $sidebarOpt , '3' );
 
 				if( $sidebarOpt != '1' ){
 					$col = '8'.$pullRight;
@@ -96,15 +96,15 @@ if( !defined( 'ABSPATH' ) ){
 		}
 	}
 	// Blog, single, search, archive pages column end hook function.
-	if( !function_exists('portfolio_blog_col_end_cb') ){
-		function portfolio_blog_col_end_cb(){
+	if( !function_exists('startup_blog_col_end_cb') ){
+		function startup_blog_col_end_cb(){
 			echo '</div></div>';
 		}
 	}
 
 	// Blog post thumbnail hook function.
-	if( !function_exists('portfolio_blog_posts_thumb_cb') ){
-		function portfolio_blog_posts_thumb_cb(){
+	if( !function_exists('startup_blog_posts_thumb_cb') ){
+		function startup_blog_posts_thumb_cb(){
 			// Thumbnail Show
 			if( has_post_thumbnail() ){
 						
@@ -113,21 +113,21 @@ if( !defined( 'ABSPATH' ) ){
 					$html = '';
 					$html .= '<div class="blog_item_img">';
 					$html .= '<a href="'.esc_url( get_the_permalink() ).'" class="item-blog-img pos-relative dis-block hov-img-zoom">';
-					$html .= portfolio_img_tag(
+					$html .= startup_img_tag(
 						array(
 							'url' => esc_url( get_the_post_thumbnail_url() ),
 							'class' => 'card-img rounded-0 wp-post-image'
 						)
 					);
 					$html .= '</a>';
-					$html .= '<a href="'. esc_url( portfolio_blog_date_permalink() ) .'" class="blog_item_date"><h3>'.  get_the_time( 'd' ) .'</h3><p>'. get_the_time('M') .'</p></a>';
+					$html .= '<a href="'. esc_url( startup_blog_date_permalink() ) .'" class="blog_item_date"><h3>'.  get_the_time( 'd' ) .'</h3><p>'. get_the_time('M') .'</p></a>';
 					$html .= '</div>';
 				
 				}else{
 					
 					$html = '';
 					$html .= '<div class="blog-post-thumb">';
-					$html .= portfolio_img_tag(
+					$html .= startup_img_tag(
 						array(
 							'url' => esc_url( get_the_post_thumbnail_url() ),
 							'class' => 'card-img rounded-0 wp-post-image'
@@ -146,7 +146,7 @@ if( !defined( 'ABSPATH' ) ){
 				if( has_post_format( array( 'video' ) ) ){
 					
 					$html .= '<div class="blog-post-thumb">';
-					$html .= portfolio_embedded_media( array( 'video', 'iframe' ) );
+					$html .= startup_embedded_media( array( 'video', 'iframe' ) );
 					$html .= '</div>';
 
 				}else{
@@ -154,34 +154,34 @@ if( !defined( 'ABSPATH' ) ){
 					if( has_post_format( array( 'audio' ) ) ){
 						
 						$html .= '<div class="blog-post-thumb">';
-						$html .= portfolio_embedded_media( array( 'audio', 'iframe' ) );
+						$html .= startup_embedded_media( array( 'audio', 'iframe' ) );
 						$html .= '</div>';
 					}
 				}
 				
-				echo apply_filters( 'portfolio_audio_embedded_media', $html );
+				echo apply_filters( 'startup_audio_embedded_media', $html );
 
 			}
 		}
 	}
 
 	// Blog details wrapper start hook function.
-	if( !function_exists('portfolio_blog_details_wrap_start_cb') ){
-		function portfolio_blog_details_wrap_start_cb(){
+	if( !function_exists('startup_blog_details_wrap_start_cb') ){
+		function startup_blog_details_wrap_start_cb(){
 
 			echo '<div class="blog_details">';
 		}
 	}
 	// Blog details wrapper end hook function.
-	if( !function_exists('portfolio_blog_details_wrap_end_cb') ){
-		function portfolio_blog_details_wrap_end_cb(){
+	if( !function_exists('startup_blog_details_wrap_end_cb') ){
+		function startup_blog_details_wrap_end_cb(){
 			echo '</div>';
 		}
 	}
 
 	// Blog post title hook function.
-	if( !function_exists('portfolio_blog_posts_title_cb') ){
-		function portfolio_blog_posts_title_cb(){
+	if( !function_exists('startup_blog_posts_title_cb') ){
+		function startup_blog_posts_title_cb(){
 			if( get_the_title() ){
 
 				$html = '';
@@ -198,17 +198,17 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog posts meta hook function.
-	if( !function_exists('portfolio_blog_posts_meta_cb') ){
-		function portfolio_blog_posts_meta_cb(){
+	if( !function_exists('startup_blog_posts_meta_cb') ){
+		function startup_blog_posts_meta_cb(){
 
 			echo '<div class="post-meta"><h6>';
 			// Author
 			if( get_the_author() ){
-				echo esc_html__( 'By ', 'portfolio' ).'<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'">'.esc_html( get_the_author() ).',</a>';
+				echo esc_html__( 'By ', 'startup' ).'<a href="'.esc_url( get_author_posts_url( get_the_author_meta('ID') ) ).'">'.esc_html( get_the_author() ).',</a>';
 			}
 			// Date
 			if( get_the_date() ){
-				$postData = '<a href="'.esc_url( portfolio_blog_date_permalink() ).'">'.esc_html( get_the_date() ).',</a>';
+				$postData = '<a href="'.esc_url( startup_blog_date_permalink() ).'">'.esc_html( get_the_date() ).',</a>';
 				echo wp_kses_post( $postData );
 			}
 			
@@ -224,11 +224,11 @@ if( !defined( 'ABSPATH' ) ){
 							
 			echo wp_kses_post( $categories );
 
-			comments_popup_link( esc_html__( '0 Comment', 'portfolio' ), esc_html__( '1 Comment','portfolio' ), esc_html__('% Comments','portfolio'));
+			comments_popup_link( esc_html__( '0 Comment', 'startup' ), esc_html__( '1 Comment','startup' ), esc_html__('% Comments','startup'));
 			
 			$featured = '';
 			if( is_sticky() ){
-				$featured = '<span class="featured">'.esc_html__( 'Featured', 'portfolio' ).'</span>';
+				$featured = '<span class="featured">'.esc_html__( 'Featured', 'startup' ).'</span>';
 			}
 
 			echo '</h6>'.wp_kses_post( $featured ).'</div>';
@@ -239,16 +239,16 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog posts excerpt hook function.
-	if( !function_exists('portfolio_blog_posts_excerpt_cb') ){
-		function portfolio_blog_posts_excerpt_cb(){
+	if( !function_exists('startup_blog_posts_excerpt_cb') ){
+		function startup_blog_posts_excerpt_cb(){
 			?>
 			<div class="blog-postexcerpt">
 				<?php 
 				// Post excerpt
-				echo portfolio_excerpt_length( esc_html( portfolio_opt('portfolio_excerpt_length') ) );
+				echo startup_excerpt_length( esc_html( startup_opt('startup_excerpt_length') ) );
 
 				// Link Pages
-				portfolio_link_pages();
+				startup_link_pages();
 				?>
 			</div>			
 			<?php
@@ -256,25 +256,25 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog read more hook function.
-	if( !function_exists('portfolio_blog_read_more_cb') ){
-		function portfolio_blog_read_more_cb(){
+	if( !function_exists('startup_blog_read_more_cb') ){
+		function startup_blog_read_more_cb(){
 			?>
 			<a href="<?php the_permalink(); ?>">
-				<?php esc_html_e( 'Read More', 'portfolio' ); ?>
+				<?php esc_html_e( 'Read More', 'startup' ); ?>
 			</a>			
 			<?php
 		}
 	}
 
 	// Blog posts info links hook function.
-	if( !function_exists('portfolio_blog_posts_info_link_cb') ){
-		function portfolio_blog_posts_info_link_cb(){
-			if( portfolio_opt( 'portfolio_blog_meta' ) == 1 ) {
-				$portfolio_blog_info_link_class = is_single() ? 'blog-info-link mt-3' : 'blog-info-link';
+	if( !function_exists('startup_blog_posts_info_link_cb') ){
+		function startup_blog_posts_info_link_cb(){
+			if( startup_opt( 'startup_blog_meta' ) == 1 ) {
+				$startup_blog_info_link_class = is_single() ? 'blog-info-link mt-3' : 'blog-info-link';
 				?>
-				<ul class="<?php echo esc_attr( $portfolio_blog_info_link_class )?>">
-					<li><i class="fa fa-tags"></i> <?php echo portfolio_featured_post_cat(); ?></li>
-					<li><i class="ti-comments"></i> <?php echo portfolio_posted_comments(); ?></li>
+				<ul class="<?php echo esc_attr( $startup_blog_info_link_class )?>">
+					<li><i class="fa fa-tags"></i> <?php echo startup_featured_post_cat(); ?></li>
+					<li><i class="ti-comments"></i> <?php echo startup_posted_comments(); ?></li>
 				</ul>
 				<?php
 			}
@@ -282,14 +282,14 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog posts content hook function.
-	if( !function_exists('portfolio_blog_posts_content_cb') ){
-		function portfolio_blog_posts_content_cb(){
+	if( !function_exists('startup_blog_posts_content_cb') ){
+		function startup_blog_posts_content_cb(){
 			?>
 			<div class="blog_details">
 				<?php
 				the_content();
 				// Link Pages
-				portfolio_link_pages();
+				startup_link_pages();
 				?>
 			</div>
 			<?php
@@ -297,15 +297,15 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Page content hook function.
-	if( !function_exists('portfolio_page_content_cb') ){
-		function portfolio_page_content_cb(){
+	if( !function_exists('startup_page_content_cb') ){
+		function startup_page_content_cb(){
 			?>
 			<div class="page--content single-blog">
 				<?php 
 				the_content();
 
 				// Link Pages
-				portfolio_link_pages();
+				startup_link_pages();
 				?>
 
 			</div>
@@ -318,10 +318,10 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog page sidebar hook function.
-	if( !function_exists('portfolio_blog_sidebar_cb') ){
-		function portfolio_blog_sidebar_cb(){
+	if( !function_exists('startup_blog_sidebar_cb') ){
+		function startup_blog_sidebar_cb(){
 			
-			// $sidebarOpt = portfolio_sidebar_opt();
+			// $sidebarOpt = startup_sidebar_opt();
 					
 			// if( $sidebarOpt != '1'  || is_page()  ){
 				get_sidebar();
@@ -333,21 +333,21 @@ if( !defined( 'ABSPATH' ) ){
 
 
 	// Blog single post  social share hook function.
-	if( !function_exists('portfolio_blog_posts_share_cb') ){
-		function portfolio_blog_posts_share_cb(){
+	if( !function_exists('startup_blog_posts_share_cb') ){
+		function startup_blog_posts_share_cb(){
 			?>
 			<div class="navigation-top">
 				<?php
-				if( portfolio_opt('portfolio_like_btn') == 1 || portfolio_opt('portfolio_blog_share') == 1 ) {
+				if( startup_opt('startup_like_btn') == 1 || startup_opt('startup_blog_share') == 1 ) {
 					?>
 					<div class="d-sm-flex justify-content-between text-center">
 						<?php
-						if ( portfolio_opt( 'portfolio_like_btn' ) == 1 ) {
+						if ( startup_opt( 'startup_like_btn' ) == 1 ) {
 							echo get_simple_likes_button( get_the_ID() );
 						}
 
-						if ( portfolio_opt( 'portfolio_blog_share' ) == 1 ) {
-							echo portfolio_social_sharing_buttons( 'social-icons' );
+						if ( startup_opt( 'startup_blog_share' ) == 1 ) {
+							echo startup_social_sharing_buttons( 'social-icons' );
 						}
 						?>
 					</div>
@@ -356,7 +356,7 @@ if( !defined( 'ABSPATH' ) ){
 				}
 
 				// Post Navigation
-				portfolio_blog_single_post_navigation(); ?>
+				startup_blog_single_post_navigation(); ?>
 			</div>	
 			<?php	
 		}
@@ -366,14 +366,14 @@ if( !defined( 'ABSPATH' ) ){
 	/**
 	 * Blog single post meta category, tag, next-previous link, comments form and biography hook function.
 	 */
-	if( !function_exists('portfolio_blog_single_meta_cb') ){
-		function portfolio_blog_single_meta_cb(){
+	if( !function_exists('startup_blog_single_meta_cb') ){
+		function startup_blog_single_meta_cb(){
 						
-			$tags = portfolio_post_tags();
+			$tags = startup_post_tags();
 	
 			if( $tags ){
 				echo '<div class="wrap-tags">';
-					echo '<span class="tag-title">'.esc_html__( 'Post Tags:', 'portfolio' ).'</span>';
+					echo '<span class="tag-title">'.esc_html__( 'Post Tags:', 'startup' ).'</span>';
 					echo '<div class="tags-items">';
 					// single post tag
 					echo wp_kses_post( $tags );
@@ -391,8 +391,8 @@ if( !defined( 'ABSPATH' ) ){
 	}
 
 	// Blog 404 page hook function.
-	if( !function_exists('portfolio_fof_cb') ){
-		function portfolio_fof_cb(){
+	if( !function_exists('startup_fof_cb') ){
+		function startup_fof_cb(){
 			get_template_part( 'templates/404' );			
 		}
 	}

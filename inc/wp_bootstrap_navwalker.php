@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Name: portfolio_bootstrap_navwalker
+ * Class Name: startup_bootstrap_navwalker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
  * Version: 2.0.4
@@ -9,7 +9,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-class portfolio_bootstrap_navwalker extends Walker_Nav_Menu {
+class startup_bootstrap_navwalker extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()
@@ -201,7 +201,7 @@ class portfolio_bootstrap_navwalker extends Walker_Nav_Menu {
 				$fb_output .= ' class="' . $menu_class . '"';
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.esc_html__( 'Add a menu', 'portfolio' ).'</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.esc_html__( 'Add a menu', 'startup' ).'</a></li>';
 			$fb_output .= '</ul>';
 
 			if ( $container )
@@ -213,7 +213,7 @@ class portfolio_bootstrap_navwalker extends Walker_Nav_Menu {
 }
 
 // Social nav Walker
-class portfolio_social_navwalker extends Walker_Nav_Menu {
+class startup_social_navwalker extends Walker_Nav_Menu {
     // Tell Walker where to inherit it's parent and id values
     var $db_fields = array(
         'parent' => 'menu_item_parent', 

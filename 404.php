@@ -17,12 +17,12 @@ if( !defined( 'ABSPATH' ) ){
 
 	/**
 	 * 404 page
-	 * @Hook portfolio_fof
-	 * @Hooked portfolio_fof_cb
+	 * @Hook startup_fof
+	 * @Hooked startup_fof_cb
 	 *
 	 */
 
-	do_action( 'portfolio_fof' );
+	do_action( 'startup_fof' );
 
 	 // Call Footer
 	 get_footer();

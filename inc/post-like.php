@@ -7,14 +7,14 @@
  *
  */
 
-add_action( 'wp_enqueue_scripts', 'portfolio_sl_enqueue_scripts' );
-function portfolio_sl_enqueue_scripts() {
+add_action( 'wp_enqueue_scripts', 'startup_sl_enqueue_scripts' );
+function startup_sl_enqueue_scripts() {
 
-	wp_enqueue_script( 'portfolio-post-likes', PORTFOLIO_DIR_JS_URI . 'post-likes.js', array( 'jquery' ), '0.5', false );
+	wp_enqueue_script( 'startup-post-likes', STARTUP_DIR_JS_URI . 'post-likes.js', array( 'jquery' ), '0.5', false );
 
-	wp_localize_script( 'portfolio-post-likes', 'simpleLikes', array(
+	wp_localize_script( 'startup-post-likes', 'simpleLikes', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'unlike'  => esc_html__( 'Unlike', 'portfolio' )
+		'unlike'  => esc_html__( 'Unlike', 'startup' )
 	) );
 }
 
@@ -22,13 +22,13 @@ function portfolio_sl_enqueue_scripts() {
  * Processes like/unlike
  * @since    0.5
  */
-add_action( 'wp_ajax_nopriv_portfolio_process_simple_like', 'portfolio_process_simple_like' );
-add_action( 'wp_ajax_portfolio_process_simple_like', 'portfolio_process_simple_like' );
-function portfolio_process_simple_like() {
+add_action( 'wp_ajax_nopriv_startup_process_simple_like', 'startup_process_simple_like' );
+add_action( 'wp_ajax_startup_process_simple_like', 'startup_process_simple_like' );
+function startup_process_simple_like() {
 	// Fitness
 	$nonce = isset( $_REQUEST['nonce'] ) ? sanitize_text_field( $_REQUEST['nonce'] ) : 0;
 	if ( !wp_verify_nonce( $nonce, 'simple-likes-nonce' ) ) {
-		exit( esc_html__( 'Not permitted', 'portfolio' ) );
+		exit( esc_html__( 'Not permitted', 'startup' ) );
 	}
 	// Test if javascript is disabled
 	$disabled = ( isset( $_REQUEST['disabled'] ) && $_REQUEST['disabled'] == true ) ? true : false;
@@ -202,11 +202,11 @@ function get_simple_likes_button( $post_id, $is_comment = NULL ) {
 	// Liked/Unliked Variables
 	if ( already_liked( $post_id, $is_comment ) ) {
 		$class = esc_attr( ' liked' );
-		$title = esc_html__( 'Unlike', 'portfolio' );
+		$title = esc_html__( 'Unlike', 'startup' );
 		$icon = $icon_full;
 	} else {
 		$class = '';
-		$title = esc_html__( 'Like', 'portfolio' );
+		$title = esc_html__( 'Like', 'startup' );
 		$icon = $icon_empty;
 	}
 	$output = '<span class="sl-wrapper">'. $icon . '<a href="' . admin_url( 'admin-ajax.php?action=process_simple_like' . '&post_id=' . $post_id . '&nonce=' . $nonce . '&is_comment=' . $is_comment . '&disabled=true' ) . '" class="sl-button' . $post_id_class . $class . $comment_class . '" data-nonce="' . $nonce . '" data-post-id="' . $post_id . '" data-iscomment="' . $is_comment . '" title="' . $title . '">' . $count . '</a>' . $loader . '</span>';
@@ -321,23 +321,23 @@ function sl_format_count( $number ) {
  * @since    0.5
  */
 function get_like_count( $like_count ) {
-	$like_text = esc_html__( '', 'portfolio' );
+	$like_text = esc_html__( '', 'startup' );
 	if ( is_numeric( $like_count ) && $like_count > 1 ) { 
-		$number = sl_format_count( $like_count ) . esc_html__( ' Likes', 'portfolio' );
+		$number = sl_format_count( $like_count ) . esc_html__( ' Likes', 'startup' );
 	} else {
-		$number = sl_format_count( $like_count ) . esc_html__( ' Like', 'portfolio' );
+		$number = sl_format_count( $like_count ) . esc_html__( ' Like', 'startup' );
 	}
 	$count = '<span>'. $number .'</span>';
 	return $count;
 } // get_like_count()
 
 // User Profile List
-add_action( 'show_user_profile', 'portfolio_show_user_likes' );
-add_action( 'edit_user_profile', 'portfolio_show_user_likes' );
-function portfolio_show_user_likes( $user ) { ?>
+add_action( 'show_user_profile', 'startup_show_user_likes' );
+add_action( 'edit_user_profile', 'startup_show_user_likes' );
+function startup_show_user_likes( $user ) { ?>
 	<table class="form-table">
 		<tr>
-			<th><label for="user_likes"><?php _e( 'You Like:', 'portfolio' ); ?></label></th>
+			<th><label for="user_likes"><?php _e( 'You Like:', 'startup' ); ?></label></th>
 			<td>
 			<?php
 			$types = get_post_types( array( 'public' => true ) );
@@ -365,7 +365,7 @@ function portfolio_show_user_likes( $user ) { ?>
 			?>
 			</p>
 			<?php else : ?>
-			<p><?php esc_html__( 'You do not like anything yet.', 'portfolio' ); ?></p>
+			<p><?php esc_html__( 'You do not like anything yet.', 'startup' ); ?></p>
 			<?php 
 			endif; 
 			wp_reset_postdata(); 
